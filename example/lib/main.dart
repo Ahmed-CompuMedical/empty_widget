@@ -33,14 +33,15 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title!),
       ),
       body: Container(
+        color: Colors.black,
         alignment: Alignment.center,
         child: EmptyWidget(
           // Image from project assets
-          image: "assets/images/im_emptyIcon_1.png",
+          // image: "assets/images/im_emptyIcon_1.png",
 
           /// Image from package assets
           /// Uncomment below line to use package assets
-          packageImage: PackageImage.Image_1,
+          packageImage: PackageImage.Image_2,
           title: 'No Notification',
           subTitle: 'No  notification available yet',
           titleTextStyle: TextStyle(

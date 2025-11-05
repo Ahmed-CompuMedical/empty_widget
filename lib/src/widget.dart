@@ -38,6 +38,7 @@ class EmptyWidget extends StatefulWidget {
     this.titleTextStyle,
     this.packageImage,
     this.hideBackgroundAnimation = false,
+    this.circleColor,
   });
 
   /// Display images from project assets
@@ -45,6 +46,8 @@ class EmptyWidget extends StatefulWidget {
 
   /// Display image from package assets
   final PackageImage? packageImage; /*!*/
+  /// the color of the animated circle of the widget
+  final Color? circleColor;
 
   /// Set text for subTitle
   final String? subTitle; /*!*/
@@ -144,13 +147,16 @@ class _EmptyListWidgetState extends State<EmptyWidget> with TickerProviderStateM
     return Container(
       width: EmptyWidgetUtility.getHeightDimention(context, EmptyWidgetUtility.fullWidth(context) * .95),
       height: EmptyWidgetUtility.getHeightDimention(context, EmptyWidgetUtility.fullWidth(context) * .95),
-      decoration: BoxDecoration(boxShadow: <BoxShadow>[
-        BoxShadow(
-          offset: Offset(0, 0),
-          color: Color(0xffe2e5ed),
-        ),
-        BoxShadow(blurRadius: 30, offset: Offset(20, 0), color: Color(0xffffffff), spreadRadius: -5),
-      ], shape: BoxShape.circle),
+      decoration: BoxDecoration(
+          color: widget.circleColor,
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+              offset: Offset(0, 0),
+              color: Color(0xffe2e5ed),
+            ),
+            BoxShadow(blurRadius: 30, offset: Offset(20, 0), color: Color(0xffffffff), spreadRadius: -5),
+          ],
+          shape: BoxShape.circle),
     );
   }
 
